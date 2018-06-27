@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace ClientOrder.Service.ClientServicies
 {
-    public abstract class RepoService
+    public abstract class RepoBaseService
     {
         protected readonly ClientOrderContext Context;
-        protected RepoService(ClientOrderContext context)
+        protected RepoBaseService(ClientOrderContext context)
         {
             this.Context = context;
 

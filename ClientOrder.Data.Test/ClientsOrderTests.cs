@@ -1,8 +1,6 @@
 using System.Linq;
-
 using ClientOrder.Data.Context;
 using ClientOrder.Domain.Entities;
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

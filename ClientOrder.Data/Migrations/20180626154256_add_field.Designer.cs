@@ -4,14 +4,16 @@ using ClientOrder.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ClientOrder.Data.Migrations
 {
     [DbContext(typeof(ClientOrderContext))]
-    partial class ClientOrderContextModelSnapshot : ModelSnapshot
+    [Migration("20180626154256_add_field")]
+    partial class add_field
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,8 +47,7 @@ namespace ClientOrder.Data.Migrations
 
                     b.Property<string>("LastName");
 
-                    b.Property<string>("MiddleName")
-                        .IsRequired();
+                    b.Property<string>("MiddleName");
 
                     b.HasKey("ClientId");
 

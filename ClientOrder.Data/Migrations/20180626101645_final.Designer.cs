@@ -4,14 +4,16 @@ using ClientOrder.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ClientOrder.Data.Migrations
 {
     [DbContext(typeof(ClientOrderContext))]
-    partial class ClientOrderContextModelSnapshot : ModelSnapshot
+    [Migration("20180626101645_final")]
+    partial class final
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,7 +33,7 @@ namespace ClientOrder.Data.Migrations
 
                     b.HasKey("AddressId");
 
-                    b.ToTable("Address");
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("ClientOrder.Domain.Entities.Client", b =>
@@ -44,9 +46,6 @@ namespace ClientOrder.Data.Migrations
                     b.Property<bool>("IsDirty");
 
                     b.Property<string>("LastName");
-
-                    b.Property<string>("MiddleName")
-                        .IsRequired();
 
                     b.HasKey("ClientId");
 
@@ -65,7 +64,60 @@ namespace ClientOrder.Data.Migrations
 
                     b.HasIndex("AddressId");
 
-                    b.ToTable("ClientAddress");
+                    b.ToTable("ClientAddresses");
+                });
+
+            modelBuilder.Entity("ClientOrder.Domain.Entities.Order", b =>
+                {
+                    b.Property<Guid>("OrderId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("IsDirty");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("OrderId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("ClientOrder.Domain.Entities.OrderDetails", b =>
+                {
+                    b.Property<Guid>("OrderDetailsId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Details");
+
+                    b.Property<bool>("IsDirty");
+
+                    b.Property<Guid>("OrderId");
+
+                    b.HasKey("OrderDetailsId");
+
+                    b.HasIndex("OrderId")
+                        .IsUnique();
+
+                    b.ToTable("OrderDetails");
+                });
+
+            modelBuilder.Entity("ClientOrder.Domain.Entities.Product", b =>
+                {
+                    b.Property<Guid>("ProductId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("IsDirty");
+
+                    b.Property<string>("Name");
+
+                    b.Property<Guid?>("OrderId");
+
+                    b.Property<int>("Price");
+
+                    b.HasKey("ProductId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("ClientOrder.Domain.Entities.ClientAddress", b =>
@@ -79,6 +131,21 @@ namespace ClientOrder.Data.Migrations
                         .WithMany("Address")
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ClientOrder.Domain.Entities.OrderDetails", b =>
+                {
+                    b.HasOne("ClientOrder.Domain.Entities.Order", "Order")
+                        .WithOne("OrderDetails")
+                        .HasForeignKey("ClientOrder.Domain.Entities.OrderDetails", "OrderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ClientOrder.Domain.Entities.Product", b =>
+                {
+                    b.HasOne("ClientOrder.Domain.Entities.Order")
+                        .WithMany("Products")
+                        .HasForeignKey("OrderId");
                 });
 #pragma warning restore 612, 618
         }

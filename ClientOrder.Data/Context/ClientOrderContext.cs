@@ -6,12 +6,13 @@ namespace ClientOrder.Data.Context
 {
     public class ClientOrderContext : DbContext
     {
-        public DbSet<Address> Addresses { get; set; }
+        //public DbSet<Address> Addresses { get; set; }
         public DbSet<Client> Clients { get; set; }
-        public DbSet<ClientAddress> ClientAddresses { get; set; }
-        public DbSet<OrderDetails> OrderDetails { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<Product> Products { get; set; }
+        //public DbSet<ClientAddress> ClientAddresses { get; set; }
+        
+        //public DbSet<OrderDetails> OrderDetails { get; set; }
+        //public DbSet<Order> Orders { get; set; }
+        //public DbSet<Product> Products { get; set; }
 
         public ClientOrderContext(DbContextOptions<ClientOrderContext> options)
             :base(options){ }

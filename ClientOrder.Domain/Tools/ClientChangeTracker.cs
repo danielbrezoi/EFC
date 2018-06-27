@@ -5,7 +5,7 @@ namespace ClientOrder.Domain.Tools
 {
     public class ClientChangeTracker : INotifyPropertyChanged
     {
-        private bool isDirty;
+        private bool isDirty = false;
         public event PropertyChangedEventHandler PropertyChanged;
 
         public bool IsDirty

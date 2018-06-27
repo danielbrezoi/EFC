@@ -1,10 +1,13 @@
 ﻿using ClientOrder.Domain.Entities;
+using System;
 using System.Collections.Generic;
 
-namespace ClientOrder.Service.CudDto.CreateDto
+namespace ClientOrder.Domain.CudDto.CreateDto
 {
-    public class AddClientDto
+    public class UpdateClientDto
     {
+        public Guid ClientId { get; set; }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }

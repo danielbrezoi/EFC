@@ -7,13 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientOrder.Data", "ClientO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientOrder.Data.Test", "ClientOrder.Data.Test\ClientOrder.Data.Test.csproj", "{82F724D5-D2FD-466D-AE88-C3CAB677CB08}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientOrder.App", "ClientOrder.App\ClientOrder.App.csproj", "{50562F8B-CFA4-4281-AAEA-33A2F3E61A1E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientOrder.Service", "ClientOrder.Service\ClientOrder.Service.csproj", "{FDD867B0-62F8-4669-A7D8-53F17F9ABD00}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientOrder.Domain", "ClientOrder.Domain\ClientOrder.Domain.csproj", "{394F36DB-D2B3-45BF-84F1-E5DADAE841BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientOrderWebApi", "ClientOrderWebApi\ClientOrderWebApi.csproj", "{30154C1A-4575-4F20-AFD9-D3918C86957E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientOrderWebApi", "ClientOrderWebApi\ClientOrderWebApi.csproj", "{30154C1A-4575-4F20-AFD9-D3918C86957E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{82F724D5-D2FD-466D-AE88-C3CAB677CB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82F724D5-D2FD-466D-AE88-C3CAB677CB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82F724D5-D2FD-466D-AE88-C3CAB677CB08}.Release|Any CPU.Build.0 = Release|Any CPU
-		{50562F8B-CFA4-4281-AAEA-33A2F3E61A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50562F8B-CFA4-4281-AAEA-33A2F3E61A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50562F8B-CFA4-4281-AAEA-33A2F3E61A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{50562F8B-CFA4-4281-AAEA-33A2F3E61A1E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FDD867B0-62F8-4669-A7D8-53F17F9ABD00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FDD867B0-62F8-4669-A7D8-53F17F9ABD00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDD867B0-62F8-4669-A7D8-53F17F9ABD00}.Release|Any CPU.ActiveCfg = Release|Any CPU
